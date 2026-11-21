@@ -1,0 +1,2 @@
+# VCNE: Liberty City anti-cull indices do not apply to the Vice City map
+ANTICULL = []
