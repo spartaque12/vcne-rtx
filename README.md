@@ -19,11 +19,10 @@ No game files, executables, third-party mods or Rockstar assets are in this repo
 | Broken alpha | remove the stray duplicate `common\shaders\db\gta_alpha (2).sps` (gta4-rtx identifies shaders by preset index) |
 | White grass cards | use FusionFix's fixed procedural-object models |
 | Glowing white lamp poles | lamps use FusionFix's `gta_normal_spec_reflect_emissive` shader; replaced via a Remix mod (see below) |
-| Saves not found | [portable_saves](portable_saves/): ASI that keeps saves in `<game>\Profiles\Documents` |
 | ASIs that crash on 1.2.0.59 | IVLodLights, XLivelessAddon, VolumetricLights and others; see CHANGES.md |
 
 ## Contents
-- [`portable_saves/`](portable_saves/): `PortableSaves.asi` source. Patches GTAIV.exe's `SHGetFolderPath` import so `CSIDL_PERSONAL` resolves to `<game>\Profiles\Documents`; saves and settings stay separate from other GTA IV installs. Build: `build.cmd` (MSVC x86).
+- [`portable_saves/`](portable_saves/): `PortableSaves.asi` source. Patches GTAIV.exe's `SHGetFolderPath` import so `CSIDL_PERSONAL` resolves to `<game>\Profiles\Documents`; saves and settings stay separate from other GTA IV installs. Build: `build.cmd` (MSVC x86). Only useful when the game saves to Documents; the setup this was written for keeps saves elsewhere, so it is not installed there.
 - [`tools/festive/`](tools/festive/): converts the GTA V mod *Festive Streetlights V* (by Yash Kanojia, not included; get it from its author) into an RTX Remix replacement mod for VCNE's street lamps (`vc_stolb_*`) and traffic lights (`vc2_svetafors*`). Includes a reader for unencrypted RPF7 archives, a Gen8 ydr/ytd reader, a GTA IV resource reader, and `meshhash.c` (Remix mesh hash, the same maths as gta4-rtx). Run `python -I build.py`; paths at the top of the script.
 - [`tools/debug/`](tools/debug/): `run.ps1` launches the game, takes screenshots and collects dialogs and crash events; `dbg.py` is a minimal debugger; `img*.py` handle GTA IV `.img` archives; `disasm.py` does disassembly.
 - [`config/`](config/): files written for VCNE.
